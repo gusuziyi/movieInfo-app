@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/list.css" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">口碑榜单</h1>
+		</header>
+		<div class="mui-content">
+			<div class="mui-bar-nav">
+				<div class="mui-segmented-control">
+					<a class="mui-control-item mui-active" tabindex="0">1-25</a>
+					<a class="mui-control-item" tabindex="1">26-50</a>
+					<a class="mui-control-item" tabindex="2">51-75</a>
+					<a class="mui-control-item" tabindex="3">76-100</a>
+				</div>
+			</div>
+
+			<div class="coming" id="movieInfos">
+				<div class="mui-table-view-cell" v-for="info in infos" @tap="openDetail(info)">
+					<img :src="info.pic" />
+					<div class="info">
+						<span class="title">{{info.name}} 
+							<span class="score" >{{info.score}} </span>
+						</span>
+						<span class="type">类型：{{info.filmStyle}}</span>
+						<span class="casts">主演：{{info.Tcasts}}</span>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/h.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/ctlPub.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/top100.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var movieInfos = new Vue({
+				el: '#movieInfos',
+				data: {
+					infos: []
+				},
+				methods: {
+					resetData: function() {
+						this.$data.infos.splice(0,this.$data.infos.length);
+					},
+					openDetail:function(info){
+						goMovieDetail(info);
+					}
+				}
+			});
+		</script>
+	</body>
+
+</html>

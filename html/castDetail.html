@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/castDetail.css"/>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">影人</h1>
+		</header>
+		<div class="mui-content" id='castInfo' >
+			<div class="cover">
+				<img :src="cover" />
+			</div>
+			<div class="info">
+				<span class="name">{{name}}</span>
+				<span class="enName">{{enname}}</span>
+				<div class="brief mui-ellipsis-2">
+					出生地：{{born}}
+				</div>
+			</div>
+			<div class="hr"> </div>
+			<div class="works">
+				<div class="work" v-for="work in works" @tap='openDetail(work)'>
+					<img :src="work.pic"/>
+					<span class="workName">{{work.name}}</span>
+					<span class="workScore">{{work.score}}</span>
+				</div>
+			</div> 
+			<div class="refer"> 
+				<span class="enName">人物关系</span>
+				<div class="chart">
+					
+				</div>
+			</div>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/castDetail.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/echarts.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var castInfo = new Vue({
+				el: "#castInfo",
+				data: getCastInfo,
+				methods:{  
+					resetData:function(){
+						clearVue(this.$data);
+					},
+					openDetail:function(work){
+						goMovieDetail(work);
+					}
+				}
+			});
+		</script>
+	</body>
+
+</html>

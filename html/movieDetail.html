@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>电影详情</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/movieDetail.css" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">电影详情</h1>
+		</header>
+		<div class="mui-content mui-clearfix" id="movieInfo">
+			<div class="header">
+				<img :src="pic" />
+			</div>
+			<div class="describe">
+				<span class="title">{{title}}</span>
+				<span class="type">{{type}}</span>
+				<span class="time">{{time}}</span>
+				<span class="direc">{{dirc}}</span>
+			</div>
+			<div class="score">
+				<span class="scTitle">豆瓣评分</span>
+				<span class="scScore" v-if="score>0">{{score}}</span>
+				<span class="scScoreE" v-else="">暂无评分</span>
+				<span class="scPeople">{{people}}人</span>
+			</div>
+			<div class="hr top140"> </div>
+			<div class="brief">
+				<span class="type">简介</span>
+				<div class="mui-ellipsis-4 notrend" @tap='trend'>
+					{{brief}}
+					<span class="trend">展开</span>
+				</div>
+			</div>
+			<div class="castsDiv">
+				<div class="casts" v-for="cast in casts">
+					<img :src="cast.avatars.medium" @tap="open_cast(cast)" />
+					<span class="castName">{{cast.name}}</span>
+				</div>
+			</div>
+
+			<div class="hr"> </div>
+			<div class="comment">
+				<span class="type">评论</span>
+				<div class="comtDetail">
+					<div class="mui-pull-left userInfo">
+						<img src="../images/60x60.gif" />
+						<span class="userName">王小明</span>
+					</div>
+					<div class="mui-pull-left comtInfo">
+						<span class="commentSpan">显示评论要给豆瓣付费</span>
+					</div>
+				</div>
+				<div class="comtDetail">
+					<div class="mui-pull-left userInfo">
+						<img src="../images/60x60.gif" />
+						<span class="userName">王小明</span>
+					</div>
+					<div class="mui-pull-left comtInfo">
+						<span class="commentSpan">显示评论要给豆瓣付费</span>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/movieDetail.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/ctlPub.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var movieInfo = new Vue({
+				el: '#movieInfo',
+				data: setMovieInfo,
+				methods: {
+					resetMovieInfo: function() {
+						clearVue(this.$data);
+					},
+					open_cast: function(cast) {
+						//						console.log(cast.id);
+						mui.openWindow({
+							url: 'castDetail.html',
+							id: 'castDetail',
+							extras: {
+								castId: cast.id,
+								casts: cast.casts
+							}
+						});
+						//						console.log(cast.name)
+						//						goCastDetail(cast);
+					},
+					trend: function(){
+						trend();
+					}
+				}
+			});
+		</script>
+	</body>
+
+</html>

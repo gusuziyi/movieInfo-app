@@ -1,0 +1,142 @@
+.header {
+	height: 400px;
+	background-color: #CCCCCC;
+	position: relative;
+}
+
+.header>img {
+	display: block;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto auto;
+	position: absolute;
+}
+
+.describe {
+	margin-top: 20px;
+	margin-left: 20px;
+	float: left;
+}
+
+span {
+	display: block;
+	color: #BBBBBB;
+	font-size: 16px;
+	margin-top: 2px;
+}
+
+.describe .title {
+	font-size: 22px;
+	color: #000000;
+	margin-bottom: 10px;
+	text-overflow: ellipsis;
+	max-width: 350px;
+}
+.describe .direc{
+	text-overflow: ellipsis;
+	max-width: 350px;
+}
+.score {
+	margin-top: 40px;
+	margin-right: 20px;
+	float: right;
+	height: 80px;
+	width: 80px;
+	border: 1px solid #BBBBBB;
+	border-radius: 10px;
+	box-shadow: 0 0 10px #C7C7CC;
+	text-align: center;
+}
+
+.score .scTitle {
+	font-size: 14px;
+	color: #AAAAAA;
+}
+
+.score .scScore {
+	font-size: 20px;
+	color: orangered;
+	line-height: 25px;
+}
+
+.score .scScoreE {
+	font-size: 16px;
+	color: orangered;
+	line-height: 25px;
+}
+
+.hr {
+	border-top: 1px solid #CCCCCC;
+}
+
+.top140 {
+	clear: both;
+	display: block;
+	margin-top: 140px;
+}
+
+.brief,
+.comment {
+	margin-left: 20px;
+	padding-top: 10px;
+}
+.mui-ellipsis-4 {
+	display: -webkit-box;
+	overflow: hidden;
+	white-space: normal !important;
+	text-overflow: ellipsis;
+	word-wrap: break-word;
+	-webkit-box-orient: vertical;
+	color: #888;
+	font-size: 16px;
+}
+.notrend{
+	-webkit-line-clamp: 4;
+}
+.trend{
+	display: inline-block;
+	color: lightblue;
+}
+
+.castsDiv {
+	margin-top: 20px;
+	overflow-x:auto;
+	padding-left: 20px;
+} 
+
+.casts {
+	display: inline-block;
+	text-align: center;
+	margin-right: 20px;
+}
+
+.casts img {
+	height: 120px;
+	width: 80px;
+}
+
+.comment .userInfo {
+	margin-top: 10px;
+	text-align: center;
+}
+
+.comment .comtInfo {
+	margin-left: 10px;
+	margin-top: 5px;
+}
+
+.comment .userName {
+	font-size: 14px;
+	margin-top: -5px;
+}
+
+.comment img {
+	width: 40px;
+	height: 40px;
+}
+ .comment  .comtDetail{
+	display: block;
+	clear: both;
+}

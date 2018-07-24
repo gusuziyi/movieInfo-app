@@ -1,0 +1,72 @@
+.cover{
+	height: 350px;
+	background-color: #CCCCCC;
+	position: relative;
+	
+}
+.cover>img{
+	max-height: 330px;;
+	display: block;
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: 0;
+	margin: auto auto;
+}
+.info,
+.works,
+.refer{
+	margin-top:10px;
+	margin-left: 20px;
+}
+.info .name{
+	font-size: 18px;;
+}
+ .enName,.brief{
+	color: #AAAAAA;
+}
+.brief{
+	margin-top: 10px;
+}
+.hr{
+	border-top: 1px solid #CCCCCC;
+	margin-top: 10px;
+}
+.works{
+	overflow: auto;
+	/*overflow-x: scroll;*/
+	white-space: nowrap;
+	
+}
+.works .work{
+	display: inline-block;
+	margin-right: 20px;
+	text-align: center;
+	
+}
+.work>img{
+	height: 120px;
+	width: 80px;
+}
+.work .workName{
+	display: block;
+	color: #AAAAAA;
+	max-width: 80px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow-x: hidden;
+	font-size: 15px;
+}
+.work .workScore{
+	display: block;
+	color: orangered;
+}
+.refer{
+	margin-top: 10px;
+	text-align: center;
+}
+.chart{
+	width: 100%;
+	height: 300px;
+}

@@ -1,0 +1,31 @@
+.card{ 
+	border: 1px solid #CCCCCC;
+	padding: 10px;
+	padding-left: 15px;
+	background-color: white;
+	position: relative;
+}
+.card .pic{
+	height: 120px;
+	display: inline-block;
+	width: 20%;
+}
+.card .text{
+	width: 75%;
+	display: inline-block;
+	position: absolute;
+	text-align: left;
+	top:20px;
+	margin-left: 20px;
+}
+.film-name{
+	font-size: 17px;
+	color: #444;
+}
+.film-score{
+	margin-left: 10px;
+	color: orangered;
+}
+p.film{
+	margin-top: 8px;
+}

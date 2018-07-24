@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/searchDetail.css" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">搜索结果</h1>
+		</header>
+		<div class="mui-content" >
+			<div class="mui-scroll-wrapper content"> 
+				<div class="mui-scroll" id="pullrefresh">
+					<ul class="mui-table-view" id="films">
+						<li class="mui-table-view-cell card" v-for='film in films' @tap='open_detail(film)'>  
+							<img class='pic' :src="film.pic" />
+							<div class="text">
+								<p class="film-name mui-ellipsis">片名 :{{film.name}}
+									<span class="film-score ">{{film.score}}</span>
+								</p>
+								<p class="film mui-ellipsis">类型:{{film.filmStyle}}</p>
+								<p class="film mui-ellipsis">导演:{{film.dirc}}</p>
+								<p class="film mui-ellipsis">主演:{{film.cast}}</p>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/searchDetail.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/ctlPub.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var filmData = new Vue({
+				el: '#films',
+				data: {
+					films: [],
+					userInput:''
+				},
+				methods:{
+					open_detail:function(item){
+						goMovieDetail(item);
+					}
+				}
+			});
+			
+		</script>
+	</body>
+
+</html>

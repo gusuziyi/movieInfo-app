@@ -1,0 +1,49 @@
+.back {
+	width: 10%;
+	color: blue;
+	font-size: 16px;
+	line-height: 35px;
+	display: inline-block;
+	text-align: center;
+}
+
+.mui-input-row {
+	overflow: inherit;
+}
+
+.frame {
+	background-color: white;
+	padding: 15px 15px 0 15px;
+	vertical-align: top;
+	position: relative;
+}
+
+.search {
+	width: 75%;
+	display: inline-block;
+}
+
+.audio {
+	width: 12%;
+	font-size: 22px;
+	line-height: 35px;
+	color: #666;
+	display: inline-block;
+	text-align: center;
+}
+
+.records {
+	padding-top: 15px;
+	position: relative;
+}
+
+.records li {
+	padding-left: 20px;
+}
+
+.clear {
+	position: absolute;
+	color: #AAAAAA;
+	right: 20px;
+	top: 30px;
+}

@@ -1,0 +1,16 @@
+.mui-grid-9 {
+	background: white !important;
+}
+img {
+	width: 50px !important;
+}
+body {
+	background: transparent !important;
+}
+.title {
+	height: 30px;
+	line-height: 30px;
+	font-family: '黑体';
+	margin-left: 40%;
+	margin-top: 0%;
+}

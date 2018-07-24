@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/search.css" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<h1 class="mui-title">搜索</h1>
+		</header>
+		<div class="mui-content">
+			<div class="frame">
+				<div class="mui-input-row mui-search search">
+					<input type="search" id="userInput" placeholder="电影/影人/导演" />
+				</div>
+				<span class="audio mui-icon mui-icon-mic"></span>
+				<span class="back">取消</span>
+			</div>
+			<div class="records">
+				<ul class="mui-table-view" id="items">
+					<li class="mui-table-view-cell" v-for='item in searchItem' @tap='search(item)'>
+						<a>
+							{{item}}
+						</a>
+					</li>
+				</ul>
+				<span class="clear">全部清除</span>
+			</div>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/search.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			mui.init();
+			var searchInfo = new Vue({
+				el: '#items',
+				data: {
+					searchItem: []
+				},
+				methods: {
+					search: function(item) {
+						mui.openWindow({
+							id: 'searchDetail',
+							url: 'searchDetail.html',
+							extras: {
+								userInput: item
+							}
+						});
+					}
+				}
+			});
+		</script>
+	</body>
+
+</html>
